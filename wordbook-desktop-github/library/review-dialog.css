@@ -1,0 +1,23 @@
+/* A: a centered icon, label, and plain count on one line. */
+.study-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:38px}
+.study-action{min-width:0;height:50px;min-height:50px;display:flex;align-items:center;justify-content:center;gap:13px;padding:0 22px;border-radius:10px;font-size:19px;font-weight:600;line-height:1.3;transition:background .15s}
+.continue-action{background:#28292b;color:#fff}.continue-action:hover:not(:disabled){background:#353638}
+.review-action{background:#e9e9e7;color:#28292b}.review-action:hover:not(:disabled){background:#dededb}
+.study-action svg{width:22px;height:22px;flex-shrink:0;fill:none}.continue-action svg{fill:currentColor}
+.session-count{font-size:19px;font-weight:400;opacity:.75;font-variant-numeric:tabular-nums;background:none;border:0;padding:0;margin-left:3px}
+.study-action:disabled{opacity:.4;cursor:not-allowed}
+#sessionStatus{margin:12px 0 0;min-height:0}#browseBook{margin-top:20px}
+.optional-label{font-size:13px;font-weight:400;color:#737477;margin-left:9px}
+.choice-row button{white-space:nowrap}
+@media(max-width:620px){.study-actions{gap:10px;margin-top:30px}.study-action{height:50px;min-height:50px;font-size:17px;gap:9px;padding:0 12px}.session-count{font-size:17px;margin-left:0}.study-action svg{width:20px;height:20px}}
+
+/* Match the independent black selected options above; retain native radio semantics. */
+.order-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.order-row label{position:relative;display:block;min-width:0}
+.order-row input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.order-row label>span{display:flex;align-items:center;justify-content:center;gap:12px;height:50px;padding:0 17px;border-radius:9px;background:#efefed;color:#303132;font-size:17px;font-weight:500;line-height:1.25;transition:background .15s}
+.order-row label>span svg{width:20px;height:20px;flex-shrink:0;stroke-width:1.7}
+.order-row label:hover>span{background:#e4e4e1}
+.order-row input:checked+span{background:#28292b;color:#fff}
+.order-row input:focus-visible+span{outline:2px solid #555;outline-offset:4px}
+@media(max-width:620px){.order-row{gap:8px}.order-row label>span{font-size:16px;padding:0 9px;gap:9px}.order-row label>span svg{width:19px;height:19px}}

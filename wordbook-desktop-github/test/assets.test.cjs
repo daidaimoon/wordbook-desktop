@@ -1,0 +1,6 @@
+const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path');
+const {resolveAsset,byteRange}=require('../lib/assets.cjs');
+test('offline asset routing rejects paths outside the library and nonlocal hosts',()=>{
+ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'wordbook-route-'));try{fs.writeFileSync(path.join(temp,'index.html'),'ok');assert.equal(resolveAsset(temp,'wordbook://app/'),path.join(temp,'index.html'));assert.equal(resolveAsset(temp,'wordbook://evil/index.html'),null);assert.equal(resolveAsset(temp,'wordbook://app/%2e%2e%2fsecret'),null);assert.equal(resolveAsset(temp,'wordbook://app/%5csecret'),null);assert.equal(resolveAsset(temp,'wordbook://app/%00'),null);assert.equal(resolveAsset(temp,'https://app/index.html'),null)}finally{fs.rmSync(temp,{recursive:true})}
+});
+test('audio seeking supports bounded, open and suffix byte ranges and rejects invalid ranges',()=>{assert.deepEqual(byteRange('bytes=0-99',1000),{start:0,end:99});assert.deepEqual(byteRange('bytes=900-',1000),{start:900,end:999});assert.deepEqual(byteRange('bytes=-50',1000),{start:950,end:999});for(const s of ['bytes=2000-','bytes=20-10','bytes=0-1,4-5','bytes=-0'])assert.equal(byteRange(s,1000),false);assert.equal(byteRange(null,1000),null)});

@@ -1,0 +1,23 @@
+/* The approved light single-column setup, with a separate centered action group. */
+#setupView{max-width:760px;margin-top:50px}
+#setupView h1{font-size:30px;line-height:1.25;letter-spacing:-.65px;font-weight:550;margin-bottom:36px}
+#studyForm fieldset{margin-bottom:32px}
+#studyForm fieldset:last-of-type{margin-bottom:0}
+#studyForm legend{font-size:16px;line-height:1.4;font-weight:500;margin-bottom:12px}
+#setupView .choice-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+#setupView .choice-row button{width:100%;min-width:0;height:50px;min-height:50px;padding:0 10px;font-size:16px;font-weight:500;border-radius:8px;background:#efefed}
+#setupView .choice-row button[aria-pressed=true]{background:#28292b;color:#fff}
+#setupView .choice-row button:hover:not(:disabled):not([aria-pressed=true]){background:#e6e6e3}
+#setupView .choice-row button svg{width:13px;height:13px}
+#setupView .order-row{width:100%;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+#setupView .order-row label>span{height:50px;padding:0 12px;border-radius:8px;font-size:16px;font-weight:500}
+#setupView .study-actions{width:min(396px,100%);margin:72px auto 0;gap:16px}
+#setupView .study-action{height:50px;min-height:50px;border-radius:8px;padding:0 14px;font-size:17px;font-weight:550;gap:11px}
+#setupView .study-action svg{width:18px;height:18px}
+#setupView .session-count{font-size:17px;font-weight:400;margin-left:2px}
+#setupView #browseBook{margin-top:20px;font-size:16px;font-weight:400;color:#737477}
+#setupView #browseBook:hover{color:#303132;text-decoration:none}
+@media(max-width:620px){#setupView{margin-top:30px}#setupView h1{font-size:28px;margin-bottom:30px}#studyForm fieldset{margin-bottom:28px}#setupView .study-actions{margin-top:60px;gap:12px}}
+@media(max-width:420px){#setupView .choice-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}#setupView .choice-row button{font-size:15px}#setupView .study-action{font-size:16px;gap:8px;padding:0 8px}#setupView .session-count{font-size:16px}}
+
+@media(max-width:420px){#setupView .order-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}#setupView .order-row label>span{font-size:15px;padding:0 7px}#setupView .study-action{font-size:15px;gap:6px;padding:0 6px}#setupView .session-count{font-size:15px}#setupView .study-action svg{width:16px;height:16px}}

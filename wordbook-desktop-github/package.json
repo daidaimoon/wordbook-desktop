@@ -1,0 +1,20 @@
+{
+  "name": "wordbook-desktop",
+  "productName": "Wordbook",
+  "version": "0.1.0",
+  "description": "Wordbook offline vocabulary learning for Windows",
+  "private": true,
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "prepare-library": "node scripts/prepare-library.cjs",
+    "test": "node --test test/*.test.cjs",
+    "package": "node scripts/package.cjs"
+  },
+  "author": "Wordbook",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@electron/packager": "20.3.0",
+    "electron": "45.2.1"
+  }
+}

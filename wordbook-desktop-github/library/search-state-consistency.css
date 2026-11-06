@@ -1,0 +1,9 @@
+:root{--word-state-active:#222324;--search-text-size:16px;--search-text-weight:550;--search-text-color:#737477}
+.state-icon[title="已掌握"],.bottom-actions>.mastered-button.selected{color:var(--word-state-active)}
+.state-icon[title="已掌握"] svg,.bottom-actions>.mastered-button.selected svg{stroke:currentColor;stroke-width:1.55}
+.search input,.search input::placeholder,#collectionTrigger{font-family:inherit;font-size:var(--search-text-size);font-weight:var(--search-text-weight);letter-spacing:0;line-height:1.6}
+.search input::placeholder,#collectionTrigger{color:var(--search-text-color)}
+#collectionTrigger{gap:5px;min-width:0;padding:3px 0}#collectionTrigger>svg{width:18px;height:18px;stroke-width:1.55}#collectionTrigger>svg:last-child{width:13px;height:13px}
+.search{gap:7px;padding-left:11px;padding-right:10px}.collection-picker{padding-left:8px;margin-left:0}.search input{width:100%;min-width:0}.collection-menu>button{font-size:15px;font-weight:400}
+@media(max-width:900px) and (min-width:621px){.layout{grid-template-columns:265px minmax(0,1fr);gap:24px}}
+@media(max-width:620px){:root{--search-text-size:14px}#collectionTrigger>svg{width:16px;height:16px}#collectionTrigger>svg:last-child{width:12px;height:12px}.collection-menu>button{font-size:14px}}

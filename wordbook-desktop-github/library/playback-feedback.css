@@ -1,0 +1,10 @@
+/* Consistent tactile feedback for word, definition and example recordings. */
+.audio-controls .mini-play,.voices .voice-button{transition:background-color 150ms ease,color 150ms ease;}
+.audio-controls .mini-play:hover,.voices .voice-button:hover{background:#dededd;color:#222;}
+.audio-controls .mini-play:active,.voices .voice-button:active{background:#c8c8c6;}
+.audio-controls .mini-play.is-playing,.voices .voice-button.is-playing{background:#303030;color:#fff;}
+.audio-controls .mini-play.is-playing:hover,.voices .voice-button.is-playing:hover{background:#202020;color:#fff;}
+.audio-controls .mini-play.is-playing svg,.audio-controls .mini-play.is-playing svg path{fill:currentColor;}
+.voices .voice-button.is-playing{border-radius:50%;}
+.audio-controls .mini-play:focus-visible,.voices .voice-button:focus-visible{outline:2px solid #555;outline-offset:3px;}
+@media(prefers-reduced-motion:reduce){.audio-controls .mini-play,.voices .voice-button{transition:none;}.audio-controls .mini-play:active,.voices .voice-button:active{transform:none;}}

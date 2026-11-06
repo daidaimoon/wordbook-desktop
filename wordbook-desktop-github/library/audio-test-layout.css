@@ -1,0 +1,7 @@
+/* Shared label column keeps every definition and example aligned. */
+.cards{--label-column:112px;--label-gap:12px}
+.meaning-text{grid-template-columns:var(--label-column) minmax(0,1fr);column-gap:var(--label-gap)}
+.meaning-text .part{width:max-content;min-width:34px;max-width:100%;height:auto;min-height:34px;padding:4px 8px;display:block;justify-self:start;box-sizing:border-box;line-height:1.35;white-space:normal}
+.example-row{margin-left:0;grid-template-columns:var(--label-column) minmax(0,1fr) auto;column-gap:var(--label-gap)}
+.pron{flex-wrap:wrap}
+@media(max-width:620px){.cards{--label-column:96px;--label-gap:10px}.example-row{grid-template-columns:var(--label-column) minmax(0,1fr)}.example-row>.audio-controls{grid-column:2}}
